@@ -28,8 +28,12 @@ recorded seed rule and fits all eight methods to each input. It writes fitted
 values, tuning parameters and original-grid loss summaries, including Monte
 Carlo standard errors. The Raman script fits all eight methods to the training
 spectrum and then reads the test reference to calculate RMSE, MAE and MAXAE.
-Each command takes a new output directory. For comparisons with the reported
-tables, use the recorded R and package versions. Native REML fits can show
+Each command takes a new output directory.
+
+The manuscript's simulation tables use the complete validated run on x86-64
+Linux with R 4.5.2 and mgcv 1.9-4. This run covers 400 data sets and 3,200
+method fits. For numerical comparisons with those tables, use the original
+platform and the pinned dependency versions. Native REML fits can show
 small numerical differences across platforms.
 
 The [simulation design](reproduce/data/simulation.json) records the four mean
