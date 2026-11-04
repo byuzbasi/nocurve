@@ -1,0 +1,51 @@
+{
+  "n": 256,
+  "curves": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "replications_per_curve": 100,
+  "generating_sigma": 0.15,
+  "seed_base": 2026110200,
+  "seed_rule": "seed_base + 4*(replication-1) + curve_index",
+  "RNGkind": [
+    "Mersenne-Twister",
+    "Inversion",
+    "Rejection"
+  ],
+  "groups": [
+    "CONTEXT",
+    "SMASH4",
+    "PS",
+    "AP",
+    "SS",
+    "KERNEL"
+  ],
+  "methods": [
+    "NOC",
+    "RAW",
+    "EB0",
+    "SMASH4",
+    "PS",
+    "AP",
+    "SS",
+    "KERNEL"
+  ],
+  "basis": 96,
+  "selection": "unchanged native NOC/RAW composite score; PS/AP Gaussian REML; SS stable GCV; kernel dpill; native SMASH4 EB",
+  "metrics": [
+    "MSE",
+    "MAE",
+    "MAXAE"
+  ],
+  "outer_CV": false,
+  "new_tuning_grid": false,
+  "mean_functions": {
+    "C1": "0.18*sin(2*pi*x+0.20)+0.50*w((x-0.18)/0.64)*cos(2*pi*(7*(x-0.18)+12*(x-0.18)^2/(2*0.64))+0.40)",
+    "C2": "0.12*sin(2*pi*x-0.40)+0.72*b((x-0.28)/0.11)-0.60*b((x-0.45)/0.15)+0.40*b((x-0.73)/0.075)",
+    "C3": "0.10*cos(2*pi*x+0.30)+0.65*(s((x-0.12)/0.10)-s((x-0.70)/0.16))+0.22*(s((x-0.36)/0.06)-s((x-0.48)/0.09))",
+    "C4": "0.10+0.85*b((x-0.51)/0.018)"
+  }
+}

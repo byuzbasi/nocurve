@@ -1,0 +1,71 @@
+---
+title: "Estimator and context strengths"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Estimator and context strengths}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+NOC is the proposed noise-orthogonal contextual estimator. EB0 is the
+shared context-free baseline. RAW uses the unprojected neighborhood and
+provides the matched comparison for assessing projection. RAW and NOC
+each select a strength from their own context, so their comparison
+includes the selector's response to the projection.
+
+## Shared implementation
+
+The analysis uses the stationary DaubExPhase filter numbered 4 in
+`wavethresh::wd()`. For a non-dyadic input, the fixed boundary adapter
+copies observations to the next power-of-two length and reflects the
+result. Analysis rows fold back to original coordinates for variance
+and context calculations. Synthesis retains the original sample size.
+The score and noise estimate use the original observations.
+
+The levelwise `ashr::ash()` calls use `pointmass = TRUE`,
+`prior = "nullbiased"`, `nullweight = 10`, `gridmult = 64`,
+`mixcompdist = "normal"`, `outputlevel = 2`, and `fixg = FALSE`.
+Zero-scale masses are combined. All positive-scale components are
+retained. RcppArmadillo computes the mixture update and the context bases.
+
+The rank cutoff is $10^{-12}\max(1,s_{\max})$, where $s_{\max}$ is the
+largest singular value of the local context matrix. Singular values
+strictly between one tenth and ten times the cutoff trigger an ambiguity
+failure. The procedure omits zero analysis rows and flags positive row
+norms at or below $10^{-10}$.
+
+RAW and NOC optimize a common strength $\omega$ over $[0,1]$. The endpoint
+checks use feasible derivatives. Interior bisection requires a bracket
+width at most $10^{-10}$ and normalized first-order violation at most
+$10^{-8}$, with at most 80 iterations. To define the normalization, let
+$u_i$ be the ratio of the endpoint marginal density difference to the
+interpolated density for active coefficient $i$. With $H$ active
+coefficients and $n$ original observations, the denominator is
+$\max\{1,(n/H)\sum_i |u_i|+|\omega|\}$.
+The code also checks native mixture convergence, posterior weight sums
+and the fitted curve against an independent reconstruction.
+
+The projection concerns fixed linear summaries under independent
+Gaussian noise. The fitted priors and selected strength are learned from
+the observed signal. Numerical checks certify the specified calculation.
+The simulation evaluates curve estimation error on the original grid.
+
+## Native context strengths across 100 replicates
+
+Each row summarizes 100 selected strengths. The interval brackets the
+first and third quartiles. The two rightmost columns count exact
+endpoint selections. A range minimum printed as 0.000 may be positive
+before rounding. EB0 fixes $\omega=0$ by definition.
+
+| Scenario | Method | Median [Q1, Q3] | Range | At zero | At one |
+| --- | --- | ---: | ---: | ---: | ---: |
+| C1 | NOC | 0.425 [0.338, 0.529] | [0.130, 0.807] | 0 | 0 |
+| C1 | RAW | 0.583 [0.496, 0.688] | [0.364, 1.000] | 0 | 1 |
+| C2 | NOC | 0.270 [0.219, 0.336] | [0.123, 0.494] | 0 | 0 |
+| C2 | RAW | 0.383 [0.313, 0.442] | [0.228, 0.701] | 0 | 0 |
+| C3 | NOC | 0.133 [0.115, 0.149] | [0.062, 0.252] | 0 | 0 |
+| C3 | RAW | 0.208 [0.171, 0.252] | [0.083, 0.383] | 0 | 0 |
+| C4 | NOC | 0.169 [0.076, 0.309] | [0.000, 1.000] | 13 | 1 |
+| C4 | RAW | 0.655 [0.515, 0.831] | [0.328, 1.000] | 0 | 15 |
+
+The full records are in `reproduce/data/simulation/tuning.csv`.

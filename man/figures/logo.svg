@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="nocurve wave mark">
+  <path d="M120 8 218 64v112l-98 56-98-56V64Z" fill="#102c39" stroke="#55c3ad" stroke-width="5"/>
+  <path d="M48 117h144M120 51v132" fill="none" stroke="#9cc7cb" stroke-opacity=".28" stroke-width="1.5"/>
+  <path d="M47 119c26 0 33-39 55-39s28 77 53 77c16 0 26-26 38-35" fill="none" stroke="#78e5c9" stroke-width="7" stroke-linecap="round"/>
+  <path d="M47 130c27 0 32-29 55-29s29 57 53 57c17 0 26-18 38-28" fill="none" stroke="#efb572" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 7"/>
+</svg>

@@ -1,0 +1,8 @@
+^\.github$
+^_pkgdown\.yml$
+^CITATION\.cff$
+^docs$
+^pkgdown$
+^reproduce$
+^CONTRIBUTING\.md$
+^\.gitignore$

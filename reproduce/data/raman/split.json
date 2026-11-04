@@ -1,0 +1,31 @@
+{
+  "doi": "10.5281/zenodo.18244161",
+  "source_file": "train-data-5ms.h5",
+  "source_row_zero_based": 440,
+  "training_acquisition_one_based": 1481,
+  "test_reference_acquisitions_one_based": [
+    1485,
+    1486,
+    1487,
+    1488,
+    1489,
+    1490,
+    1491,
+    1492,
+    1493,
+    1494,
+    1495,
+    1496,
+    1497,
+    1498,
+    1499,
+    1500
+  ],
+  "test_reference_aggregation": "arithmetic mean at each original channel",
+  "channels": 800,
+  "exposure_ms": 5,
+  "sha256": {
+    "train.tsv": "9ad18ac0a998efb15a5ce09eaf44412328a8729223252fda6a8089ea69e22e1e",
+    "test.tsv": "f8d5f291ea17d5850ac05d6fe0ceefb5ecf703a6ab83c26b430400107700c75e"
+  }
+}

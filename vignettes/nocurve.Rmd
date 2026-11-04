@@ -1,0 +1,17 @@
+---
+title: "Using nocurve"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using nocurve}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Use `noc_fit(y, method = "NOC")` to fit NOC to a finite response vector
+`y` in equally spaced design order. Use `noc_fit(y)` to obtain NOC, its
+shared empirical Bayes baseline EB0, and its matched comparison RAW.
+The fitted values follow the original order of the observations.
+
+The source repository contains the scripts for the manuscript's four
+simulation scenarios and the fixed Raman split. Its README explains
+the commands and inputs.

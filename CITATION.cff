@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "nocurve: Contextual Empirical Bayes Curve Estimation"
+type: software
+version: 0.1.0
+authors:
+  - given-names: Bahadır
+    family-names: Yüzbaşı
+    orcid: "https://orcid.org/0000-0002-6196-3201"
+abstract: "A research draft implementing the EB0, RAW, and NOC curve estimators."

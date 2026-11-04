@@ -1,0 +1,164 @@
+[
+  {
+    "name": "ashr",
+    "source_version": "2.2-63",
+    "version": "2.2.63",
+    "dependencies": ["etrunct", "invgamma", "Matrix", "mixsqp", "Rcpp", "SQUAREM", "truncnorm"]
+  },
+  {
+    "name": "bitops",
+    "source_version": "1.0-9",
+    "version": "1.0.9",
+    "dependencies": []
+  },
+  {
+    "name": "caTools",
+    "source_version": "1.18.3",
+    "version": "1.18.3",
+    "dependencies": ["bitops"]
+  },
+  {
+    "name": "data.table",
+    "source_version": "1.18.4",
+    "version": "1.18.4",
+    "dependencies": []
+  },
+  {
+    "name": "digest",
+    "source_version": "0.6.39",
+    "version": "0.6.39",
+    "dependencies": []
+  },
+  {
+    "name": "etrunct",
+    "source_version": "0.1",
+    "version": "0.1",
+    "dependencies": []
+  },
+  {
+    "name": "evaluate",
+    "source_version": "1.0.5",
+    "version": "1.0.5",
+    "dependencies": []
+  },
+  {
+    "name": "highr",
+    "source_version": "0.12",
+    "version": "0.12",
+    "dependencies": ["xfun"]
+  },
+  {
+    "name": "invgamma",
+    "source_version": "1.2",
+    "version": "1.2",
+    "dependencies": []
+  },
+  {
+    "name": "irlba",
+    "source_version": "2.3.7",
+    "version": "2.3.7",
+    "dependencies": ["Matrix"]
+  },
+  {
+    "name": "jsonlite",
+    "source_version": "2.0.0",
+    "version": "2.0.0",
+    "dependencies": []
+  },
+  {
+    "name": "KernSmooth",
+    "source_version": "2.23-26",
+    "version": "2.23.26",
+    "dependencies": []
+  },
+  {
+    "name": "knitr",
+    "source_version": "1.51",
+    "version": "1.51",
+    "dependencies": ["evaluate", "highr", "xfun", "yaml"]
+  },
+  {
+    "name": "lattice",
+    "source_version": "0.22-9",
+    "version": "0.22.9",
+    "dependencies": []
+  },
+  {
+    "name": "MASS",
+    "source_version": "7.3-65",
+    "version": "7.3.65",
+    "dependencies": []
+  },
+  {
+    "name": "Matrix",
+    "source_version": "1.7-5",
+    "version": "1.7.5",
+    "dependencies": ["lattice"]
+  },
+  {
+    "name": "mgcv",
+    "source_version": "1.9-4",
+    "version": "1.9.4",
+    "dependencies": ["Matrix", "nlme"]
+  },
+  {
+    "name": "mixsqp",
+    "source_version": "0.3-54",
+    "version": "0.3.54",
+    "dependencies": ["irlba", "Rcpp", "RcppArmadillo"]
+  },
+  {
+    "name": "nlme",
+    "source_version": "3.1-169",
+    "version": "3.1.169",
+    "dependencies": ["lattice"]
+  },
+  {
+    "name": "Rcpp",
+    "source_version": "1.1.1-1.1",
+    "version": "1.1.1.1.1",
+    "dependencies": []
+  },
+  {
+    "name": "RcppArmadillo",
+    "source_version": "15.2.7-1",
+    "version": "15.2.7.1",
+    "dependencies": ["Rcpp"]
+  },
+  {
+    "name": "smashr",
+    "source_version": "1.3-12",
+    "version": "1.3.12",
+    "dependencies": ["ashr", "caTools", "data.table", "Rcpp", "wavethresh"]
+  },
+  {
+    "name": "SQUAREM",
+    "source_version": "2026.1",
+    "version": "2026.1",
+    "dependencies": []
+  },
+  {
+    "name": "truncnorm",
+    "source_version": "1.0-9",
+    "version": "1.0.9",
+    "dependencies": []
+  },
+  {
+    "name": "wavethresh",
+    "source_version": "4.7.3",
+    "version": "4.7.3",
+    "dependencies": ["MASS"]
+  },
+  {
+    "name": "xfun",
+    "source_version": "0.57",
+    "version": "0.57",
+    "dependencies": []
+  },
+  {
+    "name": "yaml",
+    "source_version": "2.3.12",
+    "version": "2.3.12",
+    "dependencies": []
+  }
+]

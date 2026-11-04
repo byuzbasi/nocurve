@@ -1,0 +1,25 @@
+Package: nocurve
+Type: Package
+Title: Contextual Empirical Bayes Curve Estimation
+Version: 0.1.0
+Authors@R: person("Bahadır", "Yüzbaşı", role = c("aut", "cre"),
+    email = "bahadir.yuzbasi@inonu.edu.tr",
+    comment = c(ORCID = "0000-0002-6196-3201"))
+Description: Implements the noise-orthogonal contextual estimator (NOC)
+    for a signal on an equally spaced observation grid using stationary
+    wavelet shrinkage. The matched family includes the context-free
+    empirical Bayes baseline EB0 and the unprojected contextual estimator
+    RAW for assessing the contribution of projection.
+License: file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.4.0)
+Imports:
+    ashr (>= 2.2.63),
+    digest,
+    Rcpp,
+    stats,
+    wavethresh (>= 4.7.3)
+LinkingTo: Rcpp, RcppArmadillo
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
+SystemRequirements: C++17

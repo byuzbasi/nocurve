@@ -1,0 +1,4 @@
+useDynLib(nocurve, .registration = TRUE)
+importFrom(Rcpp, evalCpp)
+importFrom(stats, dnorm, fft, median, pchisq, qnorm, setNames)
+export(noc_fit)
