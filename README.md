@@ -39,3 +39,33 @@ small numerical differences across platforms.
 The [simulation design](reproduce/data/simulation.json) records the four mean
 functions. The [Raman data note](reproduce/data/ATTRIBUTION.md) documents the
 single split and attribution.
+
+## Render the manuscript displays
+
+From the repository root, pass two directories of completed results and a new
+output directory. Rendering uses base R graphics, knitr (checked with 1.51)
+and kableExtra (checked with 1.4.0).
+
+```sh
+Rscript --vanilla reproduce/render.R results-simulation results-raman manuscript-displays
+```
+
+The simulation directory supplies `scenario_metrics.tsv`,
+`balanced_metrics.tsv` and `mean_curves.tsv` for the complete
+100-replication study. The Raman directory supplies `predictions.csv` and
+`test_errors.csv` for the fixed training–test split. Use the corresponding
+directories from a completed run or the archived results used for the paper,
+which can be requested from the corresponding author. The renderer reads
+these files directly and checks the Raman scores against the saved predictions.
+
+| Manuscript display | File |
+| --- | --- |
+| Table 3. Losses by simulation scenario | `scenario_losses.tex` |
+| Table 4. Losses averaged equally over scenarios | `overall_losses.tex` |
+| Table 5. Raman test errors | `raman_case_metrics.tex` |
+| Figure 1. Mean estimated simulation curves | `simulation_mean_curves.eps` |
+| Figure 2. Estimated Raman spectra | `raman_case.eps` |
+
+The two descriptive tables are defined in the manuscript's LaTeX source.
+For a PDF-based LaTeX workflow, convert the EPS outputs with `epstopdf`, for example
+`epstopdf manuscript-displays/simulation_mean_curves.eps`.

@@ -68,4 +68,5 @@ before rounding. EB0 fixes $\omega=0$ by definition.
 | C4 | NOC | 0.169 [0.076, 0.309] | [0.000, 1.000] | 13 | 1 |
 | C4 | RAW | 0.655 [0.515, 0.831] | [0.328, 1.000] | 0 | 15 |
 
-The full records are in `reproduce/data/simulation/tuning.csv`.
+The simulation command writes the full records to `tuning.csv` in the
+chosen output directory.
